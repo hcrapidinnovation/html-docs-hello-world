@@ -19,5 +19,6 @@ jobs:
           REMOTE_HOST: "54.193.129.176"
           REMOTE_USER: "ubuntu"
           TARGET: "/home/ubuntu/html-docs-hello-world/"
+      - name: run 
         run: export FLASK_APP=main.py
         run: flask run
