@@ -21,6 +21,6 @@ jobs:
         TARGET: "/home/ubuntu/html-docs-hello-world/"
     - run: pwd
     - run: sudo apt install -y python3-flask
-    - run: set hritik="hello world"
+    - run: set FLASK_APP=main.py
     - run: export FLASK_APP=main.py
     - run: flask run
