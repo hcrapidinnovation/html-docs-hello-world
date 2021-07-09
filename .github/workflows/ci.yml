@@ -1,17 +1,21 @@
-name: CI
+name: Push-to-EC2
 
-on: 
-  push:
-    branches:    
-      - master 
+on: push
 
 jobs:
-  build:
-
+  deploy:
+    name: Push to EC2 Instance
     runs-on: ubuntu-latest
-     
+
     steps:
-    - uses: actions/checkout@v1
-    - name: yarn build
-      run: |
-        index.html
+      - name: Checkout the code
+        uses: actions/checkout@v1
+
+      - name: Deploy to my EC2 instance
+        uses: easingthemes/ssh-deploy@v2.1.5
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SOURCE: "./"
+          REMOTE_HOST: "ubuntu@54.193.129.176"
+          REMOTE_USER: "ubuntu"
+          TARGET: "/home/ubuntu/hello-world"
