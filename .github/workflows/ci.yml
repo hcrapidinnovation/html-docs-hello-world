@@ -16,7 +16,7 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SOURCE: "./"
-          REMOTE_HOST: "ubuntu@54.193.129.176"
+          REMOTE_HOST: "54.193.129.176"
           REMOTE_USER: "ubuntu"
           TARGET: "/home/ubuntu/html-docs-hello-world/"
   
