@@ -8,17 +8,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout the code
-        uses: actions/checkout@v1
+    - name: Checkout the code
+      uses: actions/checkout@v1
 
-      - name: Deploy to my EC2 instance
-        uses: easingthemes/ssh-deploy@v2.1.5
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          SOURCE: "./"
-          REMOTE_HOST: "54.193.129.176"
-          REMOTE_USER: "ubuntu"
-          TARGET: "/home/ubuntu/html-docs-hello-world/"
-      - name: running code
-        run: export FLASK_APP=main.py
-        run: flask run
+    - name: Deploy to my EC2 instance
+      uses: easingthemes/ssh-deploy@v2.1.5
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        SOURCE: "./"
+        REMOTE_HOST: "54.193.129.176"
+        REMOTE_USER: "ubuntu"
+        TARGET: "/home/ubuntu/html-docs-hello-world/"
+    - run: export FLASK_APP=main.py
+    - run: flask run
