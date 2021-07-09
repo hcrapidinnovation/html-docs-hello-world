@@ -19,3 +19,4 @@ jobs:
           REMOTE_HOST: "ubuntu@54.193.129.176"
           REMOTE_USER: "ubuntu"
           TARGET: "/home/ubuntu/html-docs-hello-world/"
+  
