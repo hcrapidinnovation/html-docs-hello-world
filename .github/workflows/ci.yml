@@ -20,7 +20,7 @@ jobs:
         REMOTE_USER: "ubuntu"
         TARGET: "/home/ubuntu/html-docs-hello-world/"
     - run: pwd
-    - run: sudo apt install python3-flask
+    - run: sudo apt install -y python3-flask
     - run: pwd
     - run: cd /home/ubuntu/html-docs-hello-world/
     - run: export FLASK_APP=main.py
