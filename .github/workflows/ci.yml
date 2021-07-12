@@ -19,6 +19,21 @@ jobs:
         REMOTE_HOST: "54.193.129.176"
         REMOTE_USER: "ubuntu"
         TARGET: "/home/ubuntu/html-docs-hello-world/"
+    - run: sudo apt-get update
+    - run: sudo apt-get install \
+           apt-transport-https \
+           ca-certificates \
+           curl \
+          gnupg-agent \
+          software-properties-common
+    - run: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    - run: sudo apt-get install docker-ce docker-ce-cli containerd.io
+    - run: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    - run: sudo apt-get install docker-ce docker-ce-cli containerd.io
+    - run: apt-cache madison docker-ce
+    - run: sudo apt-get install docker-ce docker-ce-cli containerd.io
+    - run: sudo apt install docker.io
+    - run: sudo apt install docker-compose
     - run: pwd
     - run: sudo apt install -y python3-flask
     - run: FLASK_APP=main.py flask run
